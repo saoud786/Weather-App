@@ -1,0 +1,48 @@
+.details-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  margin: 20px auto;
+  max-width: 320px;
+}
+
+/* card */
+.detail-card {
+  padding: 12px 33px 12px 33px;
+  border-radius: 16px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+  transition: 0.2s;
+}
+
+
+/* hover */
+.detail-card:hover {
+  transform: translateY(-3px);
+}
+
+/* label */
+.detail-card p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* value */
+.detail-card h3 {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* 📱 mobile */
+@media (max-width: 500px) {
+  .details-container {
+    max-width: 90%;
+  }
+}

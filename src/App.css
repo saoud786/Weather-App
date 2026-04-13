@@ -1,0 +1,217 @@
+/* ========================= */
+/* 🔥 RESET */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔥 SAFARI HEIGHT FIX */
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* 🔥 MAIN APP */
+/* ========================= */
+.app {
+  min-height: 100vh;
+  min-height: -webkit-fill-available; /* 🔥 SAFARI FIX */
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* ========================= */
+/* 🔥 OVERLAY FIX */
+/* ========================= */
+.app::before {
+  content: "";
+  position: fixed; /* 🔥 IMPORTANT FIX */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.app > * {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* ========================= */
+/* 🔥 MAIN CONTENT */
+/* ========================= */
+.main-content {
+  flex: 1;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 15px;
+  padding-bottom: 80px; /* 🔥 prevent footer overlap */
+  gap: 25px;
+}
+
+/* ========================= */
+/* 🔥 DETAILS SIDE */
+/* ========================= */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ========================= */
+/* 🔥 BACKGROUNDS */
+/* ========================= */
+.app.clear {
+  background: url("https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1600") no-repeat center/cover;
+}
+.app.cloud {
+  background: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=1600") no-repeat center/cover;
+}
+.app.rain {
+  background: url("https://images.unsplash.com/photo-1501691223387-dd0500403074?q=80&w=1600") no-repeat center/cover;
+}
+.app.fog {
+  background: url("https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1600") no-repeat center/cover;
+}
+.app.default {
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+/* ========================= */
+/* 🔥 DESKTOP GRID */
+/* ========================= */
+.weather-layout {
+  width: 100%;
+  display: grid;
+  gap: 1.5rem;
+
+  grid-template-columns: 240px 1fr 260px;
+  align-items: start;
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  color: white;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ========================= */
+/* 🔥 TABLET */
+/* ========================= */
+@media (max-width: 1024px) {
+  .weather-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .details-container {
+    align-items: center;
+  }
+
+  .details-container .item {
+    width: 80%;
+  }
+}
+
+/* ========================= */
+/* 🔥 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .main-content {
+    padding: 10px;
+    padding-bottom: 90px; /* 🔥 more space for footer */
+    gap: 14px;
+  }
+
+  .weather-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* 🔥 ORDER FIX */
+  .weather-layout > :nth-child(2) { order: 1; }
+  .weather-layout > :nth-child(3) { order: 2; }
+  .weather-layout > :nth-child(1) { order: 3; }
+
+  /* 🔥 WEATHER CARD */
+  .weather-card {
+    max-width: 95%;
+    padding: 14px;
+    margin: 0 auto;
+  }
+
+  .temp {
+    font-size: 36px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  /* 🔥 DETAILS GRID */
+  .details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .details-container .item {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* 🔥 RECENT */
+  .recent-container {
+    width: 92%;
+    margin: 0 auto;
+  }
+}
+
+/* ========================= */
+/* 🔥 FOOTER FIX */
+/* ========================= */
+.footer {
+  margin-top: auto;
+}

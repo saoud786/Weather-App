@@ -1,0 +1,105 @@
+/* 🔥 SEARCH BAR */
+.search-bar {
+  width: 100%;                /* ✅ full width */
+  max-width: 520px;           /* ✅ control size */
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 30px auto;
+
+  padding: 10px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* 🔥 hover (smooth, no jump) */
+.search-bar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* 🔥 focus (clean glow) */
+.search-bar:focus-within {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.5),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* 🔥 INPUT */
+.search-bar input {
+  flex: 1;
+  padding: 12px 14px;
+
+  font-size: 15px;
+  color: #fff;
+
+  background: transparent;
+  border-radius: 12px;
+
+  transition: color 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #9ca3af;
+}
+
+/* 🔥 BUTTON */
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: #fff;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* 🔥 hover */
+.search-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
+}
+
+/* 🔥 click */
+.search-btn:active {
+  transform: scale(0.95);
+}
+
+/* 🔥 ICON */
+.search-icon {
+  width: 18px;
+  height: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+/* icon animation */
+.search-btn:hover .search-icon {
+  transform: scale(1.1);
+}
+
+/* 📱 MOBILE */
+@media (max-width: 500px) {
+  .search-bar {
+    max-width: 95%;
+    padding: 8px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+  }
+}

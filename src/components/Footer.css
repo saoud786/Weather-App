@@ -1,0 +1,120 @@
+/* ========================= */
+/* 🔥 FOOTER FINAL */
+/* ========================= */
+.footer {
+  width: 100%;
+  max-width: none;
+
+  /* 🔥 IMPORTANT FIX */
+  margin-top: auto;   /* always bottom */
+
+  /* ❌ remove wrong margin override */
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+
+  /* 🔥 padding */
+  padding: 18px 30px;
+  padding-bottom: calc(18px + env(safe-area-inset-bottom));
+
+  border-radius: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 -5px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🔥 LEFT TEXT */
+.footer p {
+  letter-spacing: 0.3px;
+}
+
+/* 🔥 LINKS */
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+/* 🔥 LINK STYLE */
+.footer a {
+  position: relative;
+
+  color: #d6c8ff;
+  text-decoration: none;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  transition: all 0.25s ease;
+}
+
+/* 🔥 UNDERLINE HOVER */
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 0%;
+  height: 1px;
+
+  background: #d6c8ff;
+  transition: width 0.25s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
+
+/* 🔥 HOVER COLOR */
+.footer a:hover {
+  color: #ffffff;
+}
+
+/* 🔥 ICON */
+.footer-icon {
+  font-size: 16px;
+  color: #cbb6ff;
+  transition: all 0.25s ease;
+}
+
+.footer a:hover .footer-icon {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+    padding: 14px 10px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

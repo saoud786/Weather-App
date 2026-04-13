@@ -1,0 +1,79 @@
+/* 🔥 container */
+.recent-container {
+  width: 220px;
+  margin-left: 12px;
+}
+
+/* 🔥 title */
+.recent-title {
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-bottom: 14px;
+
+  position: relative;
+  color: #fff;
+}
+
+/* 🔥 WHITE UNDERLINE */
+.recent-title::after {
+  content: "";
+  display: block;
+
+  width: 180px;
+  height: 1px; /* 🔥 thinner */
+
+  margin-top: 6px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+
+  border-radius: 999px;
+}
+
+/* empty */
+.empty {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* 🔥 list */
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 🔥 item (bigger box) */
+.recent-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+
+  text-align: left;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* hover */
+.recent-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(6px);
+}
+
+/* click */
+.recent-item:active {
+  transform: scale(0.96);
+}
+

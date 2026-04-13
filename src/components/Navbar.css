@@ -1,0 +1,29 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* 🔥 LEFT SIDE */
+  align-items: center;
+margin-top: 10px;
+  margin-bottom: -10px;
+  margin-left: 15px;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  color: #fff;
+}
+
+/* icon */
+.logo-icon {
+  width:40px;
+  height: 40px;
+  color: #8b5cf6; /* purple accent */
+}
+

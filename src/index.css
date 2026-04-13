@@ -1,0 +1,42 @@
+/* 🔥 RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔥 HTML + BODY FULL HEIGHT */
+html,
+body {
+  height: 100%;
+}
+
+/* 🔥 BODY */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+
+  min-height: 100vh;
+  overflow-x: hidden; /* ✅ no side scroll */
+}
+
+/* 🔥 ROOT (NO PADDING HERE) */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 🔥 INPUT + BUTTON RESET */
+input,
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* 🔥 BUTTON */
+button {
+  cursor: pointer;
+  background: none;
+}
